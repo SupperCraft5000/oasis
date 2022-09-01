@@ -8,11 +8,7 @@ module.exports.createObjects = function(objects){
           type: "Point",
           coordinates: [obj.posx, obj.posy]
         },
-        properties: {
-          name: obj.name,
-          icon: obj.icon,
-          desc: obj.icon.desc
-        }
+        properties: obj
       });
     }
   })
@@ -24,5 +20,5 @@ module.exports.createGeoJson = function(objects) {
     type: "FeatureCollection",
     features: objects,
   }
-  return JSON.stringify(json);
+  return json;
 }
